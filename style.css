@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rouge+Script&family=Single+Day&display=swap');
+
+/* === Variáveis === */
+:root {
+    --corFundo: #3D315B;
+    --corMain: #8A84E2;
+    --corTimeBox: rgb(248, 245, 245);
+    --corDigits: rgb(248, 245, 245);
+}
+
+/* === Reset e padrão global === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--corFundo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5dvh;
+    font-size: 1rem;
+}
+
+/* === Estrutura principal === */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--corMain);
+    padding: 5vw;
+    margin: 5vw;
+    border-radius: 13px;
+    width: 100%;
+    max-width: 800px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* === Títulos === */
+h1, h2, h3 {
+    font-family: "Rouge Script", cursive;
+    color: #eaf8f8;
+    margin: 15px 0;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 3em);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 5vw, 2em);
+}
+
+h3 {
+    text-align: center;
+    padding: 3px 0;
+    margin: 0;
+    background-color: var(--corTimeBox);
+    border-bottom: 2px solid #58558E;
+    color: #58558E;
+    font-size: clamp(1.1rem, 4vw, 1.5em);
+}
+
+/* === Caixa de tempo === */
+.time-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0.1em 0.2em 3px 2px #362f2fd9;
+}
+
+/* === Dígitos === */
+.digits {
+    background-color: var(--corDigits);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;       /* Impede quebra de linha */
+    overflow: hidden;
+    width: 100%;
+    min-width: 0;
+}
+
+.digits span {
+    padding: 10px 1em;
+    font-size: clamp(1.5rem, 6vw, 3em);  /* Responsivo */
+    font-family: "Rouge Script", cursive;
+    color: #58558E;
+    white-space: nowrap;     /* Evita quebra interna */
+    flex-shrink: 1;          /* Permite diminuir tamanho */
+}
+
+.digits hr {
+    height: 5em;
+    border: 1px solid #58558E;
+}
+
+/* === Separador em main === */
+main > hr {
+    margin-top: 30px;
+    border: 1px solid #eaf8f8;
+    width: 100%;
+}
+
+/* === Texto comum === */
+pre {
+    margin-bottom: 13px;
+    color: #e0f2f2;
+    font-size: clamp(1.2rem, 4.5vw, 1.95rem);
+    font-family: "Rouge Script", cursive;
+    font-weight: 500;
+}
+
+/* === Responsividade para telas menores === */
+@media (max-width: 600px) {
+    main {
+        padding: 5vw;
+        margin: 4vw;
+    }
+
+    .digits span {
+        padding: 0.5em;
+    }
+
+    .digits hr {
+        height: 3em;
+    }
+}
